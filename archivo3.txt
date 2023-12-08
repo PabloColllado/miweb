@@ -1,0 +1,991 @@
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ $ ls -al ~/.ssh
+bash: $: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ ls -al ~/.ssh
+ls: cannot access '/c/Users/pablo/.ssh': No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ ssh-keygen -t resa -b 4096 - c "pablocollador3@gmail.com"
+Too many arguments.
+usage: ssh-keygen [-q] [-a rounds] [-b bits] [-C comment] [-f output_keyfile]
+                  [-m format] [-N new_passphrase] [-O option]
+                  [-t dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]
+                  [-w provider] [-Z cipher]
+       ssh-keygen -p [-a rounds] [-f keyfile] [-m format] [-N new_passphrase]
+                   [-P old_passphrase] [-Z cipher]
+       ssh-keygen -i [-f input_keyfile] [-m key_format]
+       ssh-keygen -e [-f input_keyfile] [-m key_format]
+       ssh-keygen -y [-f input_keyfile]
+       ssh-keygen -c [-a rounds] [-C comment] [-f keyfile] [-P passphrase]
+       ssh-keygen -l [-v] [-E fingerprint_hash] [-f input_keyfile]
+       ssh-keygen -B [-f input_keyfile]
+       ssh-keygen -D pkcs11
+       ssh-keygen -F hostname [-lv] [-f known_hosts_file]
+       ssh-keygen -H [-f known_hosts_file]
+       ssh-keygen -K [-a rounds] [-w provider]
+       ssh-keygen -R hostname [-f known_hosts_file]
+       ssh-keygen -r hostname [-g] [-f input_keyfile]
+       ssh-keygen -M generate [-O option] output_file
+       ssh-keygen -M screen [-f input_file] [-O option] output_file
+       ssh-keygen -I certificate_identity -s ca_key [-hU] [-D pkcs11_provider
+                  [-n principals] [-O option] [-V validity_interval]
+                  [-z serial_number] file ...
+       ssh-keygen -L [-f input_keyfile]
+       ssh-keygen -A [-a rounds] [-f prefix_path]
+       ssh-keygen -k -f krl_file [-u] [-s ca_public] [-z version_number]
+                  file ...
+       ssh-keygen -Q [-l] -f krl_file [file ...]
+       ssh-keygen -Y find-principals -s signature_file -f allowed_signers_fil
+       ssh-keygen -Y match-principals -I signer_identity -f allowed_signers_f
+       ssh-keygen -Y check-novalidate -n namespace -s signature_file
+       ssh-keygen -Y sign -f key_file -n namespace file [-O option] ...
+       ssh-keygen -Y verify -f allowed_signers_file -I signer_identity
+                  -n namespace -s signature_file [-r krl_file] [-O option]
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ ssh-keygen -t rsa -b 4096 -C "pablocollador3@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/pablo/.ssh/id_rsa): nc
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in nc
+Your public key has been saved in nc.pub
+The key fingerprint is:
+SHA256:qQbwKnuZ8mQBWxtqrTwmnI4vDBVY7NQELGAbUmxHu48 pablocollador3@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|+X+=o            |
+|= X o.           |
+|.*+o.            |
+| =+= .   .       |
+|ooo.+   S        |
+|= oo + .         |
+|=B+oE +          |
+|B*=  .           |
+|oBo              |
++----[SHA256]-----+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git --version
+git version 2.43.0.windows.1
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config --global user.name "Pablo Collado"
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config --global user.email pablocollador3@gmail.com
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$  config --global core.editor "code --wait"
+bash: config: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config --global core.editor "code --wait"
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config --global -e
+hint: Waiting for your editor to close the file... code --wait: line 1: code:mmand not found
+error: There was a problem with the editor 'code --wait'.
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config --global core.autocrlf input
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ git config -h
+usage: git config [<options>]
+
+Config file location
+    --[no-]global         use global config file
+    --[no-]system         use system config file
+    --[no-]local          use repository config file
+    --[no-]worktree       use per-worktree config file
+    -f, --[no-]file <file>
+                          use given config file
+    --[no-]blob <blob-id> read config from given blob object
+
+Action
+    --[no-]get            get value: name [value-pattern]
+    --[no-]get-all        get all values: key [value-pattern]
+    --[no-]get-regexp     get values for regexp: name-regex [value-pattern]
+    --[no-]get-urlmatch   get value specific for the URL: section[.var] URL
+    --[no-]replace-all    replace all matching variables: name value [value-pern]
+    --[no-]add            add a new variable: name value
+    --[no-]unset          remove a variable: name [value-pattern]
+    --[no-]unset-all      remove all matches: name [value-pattern]
+    --[no-]rename-section rename section: old-name new-name
+    --[no-]remove-section remove a section: name
+    -l, --[no-]list       list all
+    --[no-]fixed-value    use string equality when comparing values to 'valuettern'
+    -e, --[no-]edit       open an editor
+    --[no-]get-color      find the color configured: slot [default]
+    --[no-]get-colorbool  find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --[no-]type <type>
+                          value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --[no-]null       terminate values with NUL byte
+    --[no-]name-only      show variable names only
+    --[no-]includes       respect include directives on lookup
+    --[no-]show-origin    show origin of config (file, standard input, blob, mand line)
+    --[no-]show-scope     show scope of config (worktree, local, global, syst command)
+    --[no-]default <value>
+                          with --get, use default value when missing entry
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ ls
+'3D Objects'/
+ AppData/
+ AppMods/
+'Configuración local'@
+ Contacts/
+ Cookies@
+'Datos de programa'@
+ Desktop/
+ Documents/
+ Downloads/
+ Dropbox/
+'Entorno de red'@
+ Favorites/
+ Impresoras@
+ IntelGraphicsProfiles/
+ Links/
+'Menú Inicio'@
+ MicrosoftEdgeBackups/
+'Mis documentos'@
+ Music/
+ NTUSER.DAT
+ NTUSER.DAT{e11a2e7f-c93d-11ed-a83a-f9c8cee59cfd}.TM.blf
+ NTUSER.DAT{e11a2e7f-c93d-11ed-a83a-f9c8cee59cfd}.TMContainer00000000000000001.regtrans-ms
+ NTUSER.DAT{e11a2e7f-c93d-11ed-a83a-f9c8cee59cfd}.TMContainer00000000000000002.regtrans-ms
+ OneDrive/
+ Plantillas@
+ Reciente@
+'Recorded Calls'/
+'Saved Games'/
+ Searches/
+ SendTo@
+ Untitled.ipynb
+ Videos/
+ anaconda3/
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ ssh/
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ pwd
+/c/Users/pablo
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd w
+bash: cd: w: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd g
+bash: cd: g: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd a
+bash: cd: a: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd ana
+bash: cd: ana: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd..
+bash: cd..: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ pwd
+/c/Users/pablo
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ pwd
+/c/Users/pablo
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd .matplotlib
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/.matplotlib
+$ cd ..
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ pwd
+/c/Users/pablo
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd .matplotlib
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/.matplotlib
+$ pwd
+/c/Users/pablo/.matplotlib
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/.matplotlib
+$ cd ..
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ /pablo ls
+bash: /pablo: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ /pablo mkdir miweb
+bash: /pablo: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~
+$ cd GITPRUEBA
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA
+$ ls
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA
+$ mkdir miweb
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA
+$ mkdir miweb2
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA
+$ mkdir miweb2
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA
+$ cd miweb
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb
+$ git init
+Initialized empty Git repository in C:/Users/pablo/GITPRUEBA/miweb/.git/
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls -a
+./  ../  .git/
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ cd git
+bash: cd: git: No such file or directory
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls -a
+./  ../  .git/
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ cd .git
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb/.git (GIT_DIR!)
+$ ls -a
+./  ../  HEAD  config  description  hooks/  info/  objects/  refs/
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb/.git (GIT_DIR!)
+$ cd..
+bash: cd..: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb/.git (GIT_DIR!)
+$ cd ..
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ code .
+bash: code: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "Commit initial"
+[master (root-commit) 61a2273] Commit initial
+ 2 files changed, 2 insertions(+)
+ create mode 100644 archivo1.txt
+ create mode 100644 archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt
+warning: in the working copy of 'archivo2.txt', CRLF will be replaced by LF t time Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit
+hint: Waiting for your editor to close the file... code --wait: line 1: code:d not found
+error: There was a problem with the editor 'code --wait'.
+Please supply the message using either -m or -F option.
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "Commit initial"
+[master cdfa4b5] Commit initial
+ 1 file changed, 1 insertion(+)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+archivo1.txt  archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ rm archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ commit -m "Eliminando archivo2"
+bash: commit: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ^C
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "Eliminando archivo2"
+[master 783475c] Eliminando archivo2
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git rm archivo1.txt
+rm 'archivo1.txt'
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    archivo1.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git restore --staged archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git restore archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ hit status
+bash: hit: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$  mv archivo1.txt archivo.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ ls
+archivo.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo1.txt archivo.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    archivo1.txt -> archivo.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "renombrando archivo"
+[master 1b9816d] renombrando archivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename archivo1.txt => archivo.txt (100%)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git mv archivo.txt archivo1.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    archivo.txt -> archivo1.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "devolviendo el nombre"
+[master a0d11f1] devolviendo el nombre
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename archivo.txt => archivo1.txt (100%)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .env
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .env
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add .gitignore
+warning: in the working copy of '.gitignore', CRLF will be replaced by LF theime Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ commit -m ".gitignore"agregando .gitignore"
+> commit -m "agregando .gitignore"
+> git commit -m "agregando .gitignore"
+>
+>
+>
+>
+> git status
+>
+>
+> $ git commit -m "agregando .gitignore"
+>
+> "
+bash: commit: command not found
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit "agregando .gitignore"
+error: pathspec 'agregando .gitignore' did not match any file(s) known to git
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "agregando .getignore"
+[master 7e92896] agregando .getignore
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status -s
+ M .gitignore
+ M archivo1.txt
+?? archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add .gitignore
+warning: in the working copy of '.gitignore', CRLF will be replaced by LF the next time Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status -s
+M  .gitignore
+ M archivo1.txt
+?? archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status -s
+M  .gitignore
+ M archivo1.txt
+A  archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo1.txt
+warning: in the working copy of 'archivo1.txt', CRLF will be replaced by LF the next time Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status -s
+M  .gitignore
+M  archivo1.txt
+A  archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git commit -m "mostrando status corto"
+[master 92a8801] mostrando status corto
+ 3 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff
+warning: in the working copy of 'archivo2.txt', CRLF will be replaced by LF the next time Git touches it
+diff --git a/archivo2.txt b/archivo2.txt
+index 9633863..e8f9bf3 100644
+--- a/archivo2.txt
++++ b/archivo2.txt
+@@ -1 +1,3 @@
+-Perrito feliz
+\ No newline at end of file
++Perrito feliz
++Perriot triste
++felipe
+\ No newline at end of file
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff
+warning: in the working copy of 'archivo2.txt', CRLF will be replaced by LF the next time Git touches it
+diff --git a/archivo2.txt b/archivo2.txt
+index 9633863..0873b65 100644
+--- a/archivo2.txt
++++ b/archivo2.txt
+@@ -1 +1,3 @@
+-Perrito feliz
+\ No newline at end of file
++Perrito feliz
++Perrito triste
++felipe
+\ No newline at end of file
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git add archivo2.txt
+warning: in the working copy of 'archivo2.txt', CRLF will be replaced by LF the next time Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git diff --staged
+diff --git a/archivo2.txt b/archivo2.txt
+index 9633863..0873b65 100644
+--- a/archivo2.txt
++++ b/archivo2.txt
+@@ -1 +1,3 @@
+-Perrito feliz
+\ No newline at end of file
++Perrito feliz
++Perrito triste
++felipe
+\ No newline at end of file
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git log --oneline
+92a8801 (HEAD -> master) mostrando status corto
+7e92896 agregando .getignore
+a0d11f1 devolviendo el nombre
+1b9816d renombrando archivo
+783475c Eliminando archivo2
+cdfa4b5 Commit initial
+61a2273 Commit initial
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   archivo2.txt
+
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git restore --staged archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git restore archivo2.txt
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git branch
+* master
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git checkout -b ranaab
+Switched to a new branch 'ranaab'
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git branch
+  master
+* ranaab
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git status
+On branch ranaab
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git add archivo2-txt
+fatal: pathspec 'archivo2-txt' did not match any files
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git add archivo2.txt
+warning: in the working copy of 'archivo2.txt', CRLF will be replaced by LF the next time Git touches it
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git commit m "actualizando archivo2"
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'actualizando archivo2' did not match any file(s) known to git
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git commit -m "actualizando archivo2"
+[ranaab 9cb089d] actualizando archivo2
+ 1 file changed, 1 insertion(+)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git log --oneline
+9cb089d (HEAD -> ranaab) actualizando archivo2
+92a8801 (master) mostrando status corto
+7e92896 agregando .getignore
+a0d11f1 devolviendo el nombre
+1b9816d renombrando archivo
+783475c Eliminando archivo2
+cdfa4b5 Commit initial
+61a2273 Commit initial
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ cat archivo2.txt
+Perrito feliz
+Perrito feliz
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (ranaab)
+$ git checkout master
+Switched to branch 'master'
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ cat archivo2.txt
+Perrito feliz
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git merge ranab
+merge: ranab - not something we can merge
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git merge ranaab
+Updating 92a8801..9cb089d
+Fast-forward
+ archivo2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git cat archivo2.txt
+git: 'cat' is not a git command. See 'git --help'.
+
+The most similar commands are
+        clean
+        mktag
+        stage
+        stash
+        tag
+        var
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ cat archivo2.txt
+Perrito feliz
+Perrito feliz
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git remote add origin https://github.com/PabloColllado/miweb.git
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/PabloColllado/miweb.git'
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$ git push -u origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (22/22), 1.83 KiB | 625.00 KiB/s, done.
+Total 22 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/PabloColllado/miweb.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+pablo@LAPTOP-E5IDP0VL MINGW32 ~/GITPRUEBA/miweb (master)
+$
